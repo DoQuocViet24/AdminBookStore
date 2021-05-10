@@ -1,0 +1,65 @@
+body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    
+}
+.background-login {
+    background-image: url("/image/background-login.jpg");
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-attachment: fixed;
+}
+hr {
+    border: none;
+    height: 1px;
+    color: #333;
+    background-color: #333;
+}
+.container {
+    width: 90%;
+}
+#img-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+.page-top {
+    margin-top: -20px;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.box {
+    border: 1px solid red;
+}
+
+.home-headline {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #fff;
+    margin: auto;
+    text-align: center;
+    margin-top: 13px;
+}
+
+.home-headline span {
+    background-color: #231F20;
+    padding: 5px 22px;
+}
+
+.section-headline {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #fff;
+    margin: auto;
+    text-align: center;
+    margin-top: 9%;
+}
+
+.section-headline span {
+    background-color: #231F20;
+    padding: 5px 22px;
+}

@@ -192,9 +192,9 @@
 
                     <div class="col-md-8">
                         <div>
-                            <label><input value="true" type="radio" name="active" th:checked="${book.active}" /> Kích hoạt
+                            <label><input value="kích hoạt" type="radio" name="active" th:checked="${book.active}" /> Kích hoạt
                             </label>
-                            <label><input value="false" type="radio" name="active"
+                            <label><input value="chưa kích hoạt" type="radio" name="active"
                                     th:checked="${!book.active}" />Chưa kích hoạt </label>
                         </div>
                         <span class="text-muted">Trạng thái sẵn sàng của sách</span>
@@ -214,12 +214,12 @@
                 </div>
 
                 <!-- upload image -->
-               <div class="form-group row">
+                <div class="form-group row">
                     <div class="col-md-2">
-                        <label for="bookImage">Chọn ảnh đại diện</label>
+                        <label for="bookImage">Tải ảnh đại diện</label>
                     </div>
                     <div class="col-md-8">
-                        <input id="bookImage" type="file" name="bookImage" th:value="${book.bookImage}"/>
+                        <input id="bookImage" type="file" name="bookImage" th:value="${book.bookImage}" />
                     </div>
                 </div>
 

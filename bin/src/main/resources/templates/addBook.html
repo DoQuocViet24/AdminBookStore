@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
-
-<head th:replace="common/header :: common-header" />
+<head th:replace="common/header :: common-header"/>
 
 <body>
-    <!-- Static navbar -->
-    <div th:replace="common/header :: navbar" />
+<!-- Static navbar -->
+<div th:replace="common/header :: navbar"/>
 
-    <div class="container">
-        <form th:action="@{/book/updateBook}" method="post" enctype="multipart/form-data">
+<div class="container">
+        <form th:action="@{/book/add}" method="post" enctype="multipart/form-data">
             <fieldset>
-                <legend class="center-block">Sửa thông tin sách<span style="font-size: small"> * bắt buộc</span>
-                </legend>
+                <legend class="center-block">Thông tin sách mới<span
+                        style="font-size: small"> * bắt buộc</span></legend>
 
-                <input hidden="hidden" name="id" th:value="${book.id}" />
 
                 <!-- title -->
                 <div class="form-group row">
@@ -21,8 +19,8 @@
 
                     <div class="col-md-8">
                         <input type="text" name="title" class="form-control" id="title" th:value="${book.title}"
-                            required="required" placeholder="Title" />
-                        <span class="text-muted">Tên của sách</span>
+                               required="required" placeholder="Title"/>
+                        <span class="text-muted">Tên sách mới</span>
                     </div>
                 </div>
 
@@ -32,7 +30,7 @@
 
                     <div class="col-md-8">
                         <input type="text" name="author" class="form-control" id="author" th:value="${book.author}"
-                            required="required" placeholder="Author" />
+                               required="required" placeholder="Author"/>
                         <span class="text-muted">Tác giả của sách</span>
                     </div>
                 </div>
@@ -43,19 +41,19 @@
 
                     <div class="col-md-8">
                         <input type="text" name="publisher" class="form-control" id="publisher"
-                            th:value="${book.publisher}" placeholder="Publisher" />
+                               th:value="${book.publisher}" placeholder="Publisher"/>
                         <span class="text-muted">Nhà xuất bản đại diện</span>
                     </div>
                 </div>
 
                 <!-- publication date -->
                 <div class="form-group row">
-                    <label class="col-md-2 col-form-label" for="publicationDate">Ngày xuất bản</label>
+                    <label class="col-md-2 col-form-label" for="publicationDate">Thời gian xuất bản</label>
 
                     <div class="col-md-8">
                         <input type="date" class="form-control" id="publicationDate" name="publicationDate"
-                            th:value="${book.publicationDate}" placeholder="ublication Date" />
-                        <span class="text-muted">Ngày xuất bản của sách</span>
+                               th:value="${book.publicationDate}" placeholder="ublication Date"/>
+                        <span class="text-muted">Ngày bắt đầu ra mắt</span>
                     </div>
                 </div>
 
@@ -78,16 +76,11 @@
                     <div class="col-md-8">
                         <select th:value="${book.category}" id="category" name="category" class="form-control">
                             <option value="" selected="selected" disabled="disabled">Vui lòng chọn...</option>
-                            <option value="Kinh doanh" th:selected="(${book.category}=='Kinh doanh')">Kinh doanh
-                            </option>
-                            <option value="Viễn tưởng" th:selected="(${book.category}=='Viễn tưởng')">Viễn tưởng
-                            </option>
+                            <option value="Kinh doanh" th:selected="(${book.category}=='Kinh doanh')">Kinh doanh</option>
+                            <option value="Viễn tưởng" th:selected="(${book.category}=='Viễn tưởng')">Viễn tưởng</option>
                             <option value="Khoa học" th:selected="(${book.category}=='Khoa học')">Khoa học</option>
-                            <option value="Chương trình giáo dục"
-                                th:selected="(${book.category}=='Chương trình giáo dục')">Chương trình giáo dục</option>
-                            <option value="Nghệ thuật &amp; Văn học"
-                                th:selected="(${book.category}=='Nghệ thuật &amp; Văn học')">Nghệ thuật &amp; Văn học
-                            </option>
+                            <option value="Chương trình giáo dục" th:selected="(${book.category}=='Chương trình giáo dục')">Chương trình giáo dục</option>
+                            <option value="Nghệ thuật &amp; Văn học" th:selected="(${book.category}=='Nghệ thuật &amp; Văn học')">Nghệ thuật &amp; Văn học</option>
                         </select>
                     </div>
                 </div>
@@ -98,14 +91,14 @@
 
                     <div class="col-md-8">
                         <input type="number" name="numberOfPages" class="form-control" id="pageNumber"
-                            th:value="${book.numberOfPages}" placeholder="Page Number" />
-                        <span class="text-muted">Số trang của sách</span>
+                               th:value="${book.numberOfPages}" placeholder="Page Number"/>
+                        <span class="text-muted">Tổng số trang cuốn sách</span>
                     </div>
                 </div>
 
                 <!-- format -->
                 <div class="form-group row">
-                    <label class="col-md-2 col-form-label" for="format">Định dạng</label>
+                    <label class="col-md-2 col-form-label" for="format">Định dạng sách</label>
 
                     <div class="col-md-8">
                         <select th:value="${book.format}" id="format" name="format" class="form-control">
@@ -121,8 +114,8 @@
 
                     <div class="col-md-8">
                         <input type="text" name="isbn" class="form-control" id="isbn" th:value="${book.isbn}"
-                            placeholder="ISBN" />
-                        <span class="text-muted">ISBN định danh quốc tế của sách</span>
+                               placeholder="ISBN"/>
+                        <span class="text-muted">Mã ISBN định danh quốc tế của sách</span>
                     </div>
                 </div>
 
@@ -133,7 +126,7 @@
                     <div class="col-md-8">
                         <div class="input-group">
                             <input th:value="${book.shippingWeight}" type="number" name="shippingWeight" step="0.01"
-                                class="form-control" id="shippingWeight" placeholder="Shipping Weight" />
+                                   class="form-control" id="shippingWeight" placeholder="Shipping Weight"/>
                             <div class="input-group-append">
                                 <span class="input-group-text">Kilograms</span>
                             </div>
@@ -149,10 +142,10 @@
                     <div class="col-md-8">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">$</span>
+                                <span class="input-group-text">VND</span>
                             </div>
                             <input th:value="${book.listPrice}" type="number" name="listPrice" step="1000"
-                                class="form-control" id="listPrice" placeholder="List Price" />
+                                   class="form-control" id="listPrice" placeholder="List Price"/>
                         </div>
                         <span class="text-muted">Giá khởi điểm của sách</span>
                     </div>
@@ -160,17 +153,17 @@
 
                 <!-- our price -->
                 <div class="form-group row">
-                    <label class="col-md-2 col-form-label" for="ourPrice">Giá hiện tại</label>
+                    <label class="col-md-2 col-form-label" for="ourPrice">Giá bán hiện tại</label>
 
                     <div class="col-md-8">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">$</span>
+                                <span class="input-group-text">VND</span>
                             </div>
                             <input th:value="${book.ourPrice}" type="number" name="ourPrice" step="1000"
-                                class="form-control" id="ourPrice" placeholder="Our Price" />
+                                   class="form-control" id="ourPrice" placeholder="Our Price"/>
                         </div>
-                        <span class="text-muted">Giá hiện tại của sách</span>
+                        <span class="text-muted">Giá bán hiện tại sau giảm giá</span>
                     </div>
                 </div>
 
@@ -180,8 +173,8 @@
 
                     <div class="col-md-8">
                         <input th:value="${book.inStockNumber}" type="number" name="inStockNumber" class="form-control"
-                            id="inStockNumber" placeholder="Number of in-stock copies" />
-                        <span class="text-muted">Số lượng sách còn lại</span>
+                               id="inStockNumber" placeholder="Number of in-stock copies"/>
+                        <span class="text-muted">Số bản còn lại</span>
                     </div>
                 </div>
 
@@ -192,29 +185,26 @@
 
                     <div class="col-md-8">
                         <div>
-                            <label><input value="true" type="radio" name="active" th:checked="${book.active}" /> Kích hoạt
-                            </label>
-                            <label><input value="false" type="radio" name="active"
-                                    th:checked="${!book.active}" />Chưa kích hoạt </label>
+                            <label><input value="true" type="radio" name="active" checked="checked"/> Kích hoạt </label>
+                            <label><input value="false" type="radio" name="active"/>Chưa kích hoạt</label>
                         </div>
-                        <span class="text-muted">Trạng thái sẵn sàng của sách</span>
+                        <span class="text-muted">Chọn trạng thái sẵn sàng của sách</span>
                     </div>
                 </div>
 
                 <!-- description -->
                 <div class="form-group row">
-                    <label class="col-md-2 col-form-label" for="description">Mô tả</label>
+                    <label class="col-md-2 col-form-label" for="description">Mô tả của người bán</label>
 
                     <div class="col-md-8">
                         <textarea name="description" class="form-control" rows="5" id="description"
-                            th:value="${book.description}" th:text="${book.description}"
-                            placeholder="Description"></textarea>
-                        <span class="text-muted">Mô tả của người bán</span>
+                                  th:value="${book.description}" placeholder="Description"></textarea>
+                        <span class="text-muted">Mô tả về sách</span>
                     </div>
                 </div>
 
                 <!-- upload image -->
-               <div class="form-group row">
+                <div class="form-group row">
                     <div class="col-md-2">
                         <label for="bookImage">Chọn ảnh đại diện</label>
                     </div>
@@ -228,19 +218,18 @@
                     </div>
 
                     <div class="col-md-8 row">
-                        <button type="submit" class="btn btn-success">Cập nhật</button>
-                        <a class="btn btn-danger" th:href="@{/book/bookInfo(id=${book.id})}">Huỷ bỏ</a>
+                        <button type="submit" class="btn btn-success">Thêm sách</button>
+                        <a class="btn btn-danger" th:href="@{/}">Huỷ bỏ</a>
                     </div>
                 </div>
             </fieldset>
         </form>
-    </div>
+</div>
 
 
-    <!-- Bootstrap core JavaScript
+<!-- Bootstrap core JavaScript
 ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <div th:replace="common/header :: body-bottom-scripts" />
+<!-- Placed at the end of the document so the pages load faster -->
+<div th:replace="common/header :: body-bottom-scripts"/>
 </body>
-
 </html>

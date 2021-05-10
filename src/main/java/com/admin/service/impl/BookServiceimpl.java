@@ -6,6 +6,7 @@ import com.admin.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.util.List;
 
 @Service
@@ -27,6 +28,8 @@ public class BookServiceimpl implements BookService {
     }
 
     public void removeOne(Long id) {
+    	File file = new File("src/main/resources/static/image/book/"+id+".png");
+    	file.delete();
         bookRepository.deleteById(id);
     }
 }
