@@ -13,13 +13,13 @@
             <thead>
             <tr>
                 <th><input th:id="selectAllBooks" type="checkbox"/></th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Category</th>
-                <th>List Price</th>
-                <th>Our Price</th>
-                <th>Active?</th>
-                <th>Operation</th>
+                <th>Tiêu đề</th>
+                <th>Tác giả</th>
+                <th>Thể loại</th>
+                <th>Giá ban đầu</th>
+                <th>Giá hiện tại</th>
+                <th>Kích hoạt?</th>
+                <th>Mở rộng</th>
             </tr>
             </thead>
             <tbody>
@@ -38,14 +38,14 @@
                 <td>
                     <input hidden="hidden" name="id" th:value="${book.id}" />
                     <button th:id="'oneBook-'+${book.id}" class="btn btn-danger btn-xs delete-book" type="submit" value="delete">
-                        <span class="fa fa-times">Delete</span>
+                        <span class="fa fa-times">Xoá</span>
                     </button>
                 </td>
             </tr>
             </tbody>
         </table>
     </div>
-    <button th:id="deleteSelected" class="btn btn-danger">Delete Selected</button>
+    <button th:id="deleteSelected" class="btn btn-danger">Mục đã chọn xoá</button>
 </div>
 <!-- Bootstrap core JavaScript
 ================================================== -->

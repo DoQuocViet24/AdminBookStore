@@ -1,6 +1,13 @@
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    
+}
+.background-login {
+    background-image: url("/image/background-login.jpg");
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-attachment: fixed;
 }
 hr {
     border: none;
@@ -11,7 +18,12 @@ hr {
 .container {
     width: 90%;
 }
-
+#img-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
 .page-top {
     margin-top: -20px;
 }

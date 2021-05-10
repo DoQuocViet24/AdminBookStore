@@ -11,13 +11,13 @@ $(document).ready(function() {
 		var id=$(this).attr('id');
 		
 		bootbox.confirm({
-			message: "Are you sure to remove this book? It can't be undone.",
+			message: "Bạn chắc chắn xoá nội dung này? Hành động này không thể hoàn tác lại!!",
 			buttons: {
 				cancel: {
-					label:'<i class="fa fa-times"></i> Cancel'
+					label:'<i class="fa fa-times"></i> Huỷ bỏ'
 				},
 				confirm: {
-					label:'<i class="fa fa-check"></i> Confirm'
+					label:'<i class="fa fa-check"></i> Xác nhận'
 				}
 			},
 			callback: function(confirmed) {
@@ -56,13 +56,13 @@ $(document).ready(function() {
 	    /*]]>*/
 	    
 	    bootbox.confirm({
-			message: "Are you sure to remove all selected books? It can't be undone.",
+			message: "Bạn chắc chắn xoá nội dung này? Hành động này không thể hoàn tác lại!!",
 			buttons: {
 				cancel: {
-					label:'<i class="fa fa-times"></i> Cancel'
+					label:'<i class="fa fa-times"></i> Huỷ bỏ'
 				},
 				confirm: {
-					label:'<i class="fa fa-check"></i> Confirm'
+					label:'<i class="fa fa-check"></i> Xác nhận'
 				}
 			},
 			callback: function(confirmed) {
